@@ -57,14 +57,11 @@ const Home = () => {
 
 export default Home;
 
-
-
-
-
 //THINGS NEED TO BE CHANGED WHILE DISPALYING POSTS FROM API ... For now our Api is not working that's why we commented this
 
 // import styles from '../styles/home.module.css';
 // import PropTypes from 'prop-types';
+// import { Comment } from '../components';
 
 // const Home = ({ posts }) => {
 //   return (
@@ -106,15 +103,9 @@ export default Home;
 //             </div>
 
 //             <div className={styles.postCommentsList}>
-//               <div className={styles.postCommentsItem}>
-//                 <div className={styles.postCommentHeader}>
-//                   <span className={styles.postCommentAuthor}>Bill</span>
-//                   <span className={styles.postCommentTime}>a minute ago</span>
-//                   <span className={styles.postCommentLikes}>22</span>
-//                 </div>
-
-//                 <div className={styles.postCommentContent}>Random comment</div>
-//               </div>
+//                    {post.comments.map((comment) => (
+//                     <Comment comment={comment} />
+//                     ))}
 //             </div>
 //           </div>
 //         </div>
