@@ -46,3 +46,12 @@ export const getPosts = (page = 1, limit = 5) => {
     method: 'GET',
   });
 };
+
+
+//make a post request to api to POST email & password
+export const login = (email, password) => {
+  return customFetch(API_URLS.login(), {
+    method: 'POST',
+    body: { email, password },
+  });
+};
