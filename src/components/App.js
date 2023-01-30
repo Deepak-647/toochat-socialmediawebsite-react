@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import { Routes , Route } from 'react-router-dom';
-import { getPosts } from '../api';
+import { useAuth } from '../hooks';
 import { Home , Login } from '../pages';
 import { Loader } from './';
 import  Navbar from './Navbar';
@@ -19,24 +18,25 @@ const Page404 = () => {
 
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const auth = useAuth();
+  // const [posts, setPosts] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await getPosts();
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     const response = await getPosts();
 
-      if (response.success) {
-        setPosts(response.data.posts);
-      }
+  //     if (response.success) {
+  //       setPosts(response.data.posts);
+  //     }
 
-      setLoading(false);
-    };
+  //     setLoading(false);
+  //   };
 
-    fetchPosts();
-  }, []);
+  //   fetchPosts();
+  // }, []);
 
-  if (loading) {
+  if (auth.loading) {
     return <Loader/>;
   }
 
@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Routes>
-        <Route  path="/" element={<Home posts={posts} />}/>
+        <Route  path="/" element={<Home posts={[]} />}/>
           
         
 
