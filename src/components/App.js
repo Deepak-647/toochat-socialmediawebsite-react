@@ -1,6 +1,6 @@
 import { Routes , Route } from 'react-router-dom';
 import { useAuth } from '../hooks';
-import { Home , Login ,Signup} from '../pages';
+import { Home , Login ,Signup,Settings} from '../pages';
 import { Loader } from './';
 import  Navbar from './Navbar';
 
@@ -55,6 +55,7 @@ function App() {
         
 
         <Route  path="/about" element={<About />}/>
+        <Route  path="/settings" element={<Settings />}/>
           
         
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 import { useAuth } from '../hooks';
