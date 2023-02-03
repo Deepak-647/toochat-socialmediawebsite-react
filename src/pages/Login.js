@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useToasts,Redirect } from 'react-toast-notifications';
-
+import { useToasts } from 'react-toast-notifications';
+import {Navigate} from 'react-router-dom';
 import styles from '../styles/login.module.css';
 import { useAuth } from '../hooks';
 
@@ -37,7 +37,7 @@ const Login = () => {
     setLoggingIn(false);
   };
   if(auth.user){
-    return <Redirect to='/' />
+    return <Navigate to='/' />
   }
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>

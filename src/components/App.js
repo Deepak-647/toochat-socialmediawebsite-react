@@ -3,6 +3,7 @@ import { useAuth } from '../hooks';
 import { Home , Login ,Signup,Settings} from '../pages';
 import { Loader } from './';
 import  Navbar from './Navbar';
+import {PrivateRoutes} from '../utils';
 
 const About = () => {
   return <h1>About</h1>;
@@ -55,7 +56,10 @@ function App() {
         
 
         <Route  path="/about" element={<About />}/>
-        <Route  path="/settings" element={<Settings />}/>
+        {/* <PrivateRoute  path="/settings" element={<Settings />}/> */}
+        <Route  element={<PrivateRoutes/>}>
+            <Route element={<Settings/>}  path="/settings" exact />
+          </Route>
           
         
 

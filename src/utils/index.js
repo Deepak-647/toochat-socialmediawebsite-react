@@ -7,7 +7,10 @@
 // }
 
 //doing all the stuffs in a single line like this
-
+import {PrivateRoutes} from './privateRoute';
+export{
+  PrivateRoutes
+}
 export * from './constants';
 
 export const setItemInLocalStorage = (key, value) => {
