@@ -1,6 +1,6 @@
 import { Routes , Route } from 'react-router-dom';
 import { useAuth } from '../hooks';
-import { Home , Login ,Signup,Settings} from '../pages';
+import { Home , Login ,Signup,Settings,UserProfile} from '../pages';
 import { Loader } from './';
 import  Navbar from './Navbar';
 import {PrivateRoutes} from '../utils';
@@ -52,7 +52,12 @@ function App() {
         <Route  path="/login" element={ <Login />}/>
 
         <Route  path="/register" element={ <Signup />}/>
-         
+        <Route  path="/user" element={ <UserProfile />}/>
+         {/* WE CAN MAKE THE UserProfile as private like this */}
+
+         {/* <Route  element={<PrivateRoutes/>}>
+            <Route element={<UserProfile/>}  path="/user/:userId" exact />
+          </Route> */}
         
 
         <Route  path="/about" element={<About />}/>
