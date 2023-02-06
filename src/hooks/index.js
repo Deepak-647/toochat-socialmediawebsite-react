@@ -94,13 +94,24 @@ export const useProvideAuth = () => {
     removeItemFromLocalStorage(LOCALSTORAGE_TOKEN_KEY);
   };
 
+  const updateUserFriends = (addFriend, friend) => {
+    if (addFriend) {
+      setUser({
+        ...user,
+        friends: [...user.friends, friend],
+      });
+      return;
+    }
+  };
+
   return {
     user,
     login,
     logout,
     loading,
     signup,
-    updateUser
+    updateUser,
+    updateUserFriends
   }
 
 };
