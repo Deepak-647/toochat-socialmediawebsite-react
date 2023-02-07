@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Comment, Loader ,FriendsList} from '../components';
+import { Comment, Loader ,FriendsList ,CreatePost} from '../components';
 import { getPosts } from '../api';
 import styles from '../styles/home.module.css';
 import { useAuth } from '../hooks';
@@ -30,7 +30,9 @@ const Home = () => {
   }
   return (
     <div className={styles.home}>
+      
     <div className={styles.postsList}>
+    <CreatePost/>
       <div className={styles.postWrapper}>
         <div className={styles.postHeader}>
           <div className={styles.postAvatar}>
