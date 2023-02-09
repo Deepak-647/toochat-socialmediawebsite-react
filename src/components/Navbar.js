@@ -1,5 +1,3 @@
-
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/navbar.module.css';
 const Navbar = () => {
@@ -46,19 +44,35 @@ const Navbar = () => {
 
 export default Navbar;
 
-
 //THINGS NEED TO BE CHANGE WHILE USING THE useAuth () hook
 
-// import {useState} from 'react' ;
+// import {useState ,useEffect} from 'react' ;
 // import { Link } from 'react-router-dom';
 
 // import styles from '../styles/navbar.module.css';
 // import { useAuth } from '../hooks';
+// import { searchUsers } from '../api';
 
 // const Navbar = () => {
 //   const [results,setResults] =useState([]);
 //   const[searchText,setSearchText] = useState('');
 //   const auth = useAuth();
+
+//   useEffect(() => {
+//     const fetchUsers = async () => {
+//       const response = await searchUsers(searchText);
+
+//       if (response.success) {
+//         setResults(response.data.users);
+//       }
+//     };
+
+//     if (searchText.length > 2) {
+//       fetchUsers();
+//     } else {
+//       setResults([]);
+//     }
+//   }, [searchText]);
 
 //   return (
 //     <div className={styles.nav}>
@@ -74,10 +88,10 @@ export default Navbar;
 //       <img className={styles.searchIcon} src='' alt='search-icon'/>
 //     <input placeholder='Search Users' value={searchText} onChange={(e)=> setSearchText(e.target.value)} />
 
-//     {results.length > 0 && <div className={styles.searchResults}> 
+//     {results.length > 0 && <div className={styles.searchResults}>
 //       <ul>
 //         {results.map(user => <li className={styles.searchResultsRow} key ={`user-${user._id}`}>
-//           <Link to={`/users/${user._id}`}>
+//           <Link to={`/user/${user._id}`}>
 //         <img src='' alt =''/>
 //         <span>
 //           {user.name}
